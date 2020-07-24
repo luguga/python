@@ -3,7 +3,8 @@ Projects with Python
 Hi friends!
 This project is about some solutions I developed
 ## WEB Downloader
-The folder "WEB_Downloader" is a program that log into a JSP Web site and be free to download files.
+The file "WEB_Downloader" is a program that log into a JSP Web site and be free to download files.
+JSP Authentication is easy if you are the owner of website because you can log into a server directly. In this case I needed to log In with a normal user.
 After that, the program read a list of URL from a Excel file and do download one by one to a temporary folder (triangulation starts)
 After download the file is named with a server format name, but needs to be renamed to other name. Than the file is renamed and moved to destin folder (triangulations ended).
 to enter into web I used the library Selenium that controls a webdriver (I choose Chrome navigator) and not permit to control download stages.
