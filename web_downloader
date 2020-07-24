@@ -1,0 +1,71 @@
+user_id='username@webserver.com.br'
+pass_id='Foo'
+destino= "d:\\001\\"
+url = 'http://host.books.com.br/login.jsp'
+values = {'login': user_id,
+          'password': pass_id}
+
+file_name= 'd:\\001\\download_list.xls'
+sheet="Aluno"
+
+import pandas as pd
+import os
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
+from shutil import move
+
+options = Options()
+options.add_experimental_option("prefs", {
+  "download.default_directory": destino+ "temp\\",
+  "download.prompt_for_download": False,
+  "download.directory_upgrade": True,
+  "safebrowsing.enabled": True
+})
+
+driver=webdriver.Chrome(executable_path="d:\\001\\chromedriver.exe", options=options)
+driver.get(url)
+driver.find_element(By.NAME, "login").send_keys(user_id)
+driver.find_element(By.NAME, "password").send_keys(pass_id + Keys.RETURN)
+
+class meu_arquivo:
+
+    def __init__(self, fullfilename):
+
+        self.ext = fullfilename.split('.')[-1]
+        self.filename= fullfilename.split('\\')[-1].split('.')[0]
+        self.fileandext = fullfilename.split('\\')[-1]
+
+df = pd.read_excel(io=file_name, sheet_name=sheet)
+
+for URL in df.values:
+
+    titulo=URL[6]
+    file = URL[7]
+
+    titulo= ''.join(map(lambda x:x,['.' if x in list(':*') else x for x in titulo]))
+
+    if os.path.exists(os.path.abspath(destino + titulo)):
+        continue
+
+    driver.get(file)
+
+    try:
+        files=1
+        sleep(10)
+        while files > 0:
+            listfiles=os.listdir(destino + 'temp\\')
+            listfiles=[x for x in listfiles if x[-10:]=='crdownload']
+            files= len(listfiles)
+            sleep(5)
+    finally:
+        pass
+
+    listfiles = os.listdir(destino + 'temp\\')
+    listfiles = [x for x in listfiles if x[-3:] == 'zip']
+    if len(listfiles) > 0 and listfiles[0] != None:
+        print(os.path.abspath(destino + 'temp\\' + listfiles[0]), os.path.abspath(destino + titulo))
+        move(os.path.abspath(destino + 'temp\\' + listfiles[0]), os.path.abspath(destino + titulo))
+driver.quit()
