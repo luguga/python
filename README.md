@@ -14,3 +14,7 @@ After finish download I renamed the file and moved It to destination folder.
 To control the flow I read all files downloaded and not perform same download, if the file has 2 same names, the second file does not be downloaded (make sense!)
 The list has about 1000 files, it make sense to control the flow of downloads and permit resume other day.
 This project was sucessful executed, and has gain of 60% of production time. It was did manually and much time expended.
+
+## SQLite Tips
+The file contains some scripts to create a Database, run scripts Transact SQL and run queries.
+The simple examples is a first step, just a seed, to do large things is step by step and walk kilometers, build a centenary tree, a large garden... the sky is the limit.
