@@ -1,0 +1,19 @@
+# library do sqlite
+
+import sqlite3
+
+#conexao
+
+conn=sqlite3.connect("meubanco.db")
+
+#criando um cursor
+
+cur=conn.cursor
+
+#comando T-SQL
+
+cur.execute("escreva sua create aqui")
+
+#gravar execucoes
+
+conn.commit
