@@ -18,3 +18,6 @@ This project was sucessful executed, and has gain of 60% of production time. It 
 ## SQLite Tips
 The file contains some scripts to create a Database, run scripts Transact SQL and run queries.
 The simple examples is a first step, just a seed, to do large things is step by step and walk kilometers, build a centenary tree, a large garden... the sky is the limit.
+
+## dia de sorte
+Here in Brazil has a lotery modal game thats want some choose, a month and some sorted numbers, if you win remember me :)
