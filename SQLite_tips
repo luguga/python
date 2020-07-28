@@ -12,8 +12,27 @@ cur=conn.cursor
 
 #comando T-SQL
 
-cur.execute("escreva sua create aqui")
+#modelagem da tabela notas
+
+sql_command="create table /
+notas (/
+id integer primary key AUTOINCREMENT, /
+CPF_CPNJ varchar(50) null, /
+numero varchar(50) null, /
+serie varchar(50) null, /
+dt_emissao int null, /
+t_emissao int null/
+)
+cur.execute(sql_command)
+
+#usando máscara para inserir dados, mais simples que escrever um loop com string chumbada
+#se precisar alterar o código mestre só mexer aqui
+sql_command="insert into minha_tabela values (?, ?, ?, ?, ?)"
+novos_dados= [('63004030000882','62162','0','09072020','175340')]
+
+#insere registro a registro, neste ponto pode-se utilizar algorítimos de validação
+for documento in novos_dados:
+  curr.execute(sql_command,documento)
 
 #gravar execucoes
-
 conn.commit
