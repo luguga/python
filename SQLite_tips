@@ -27,7 +27,7 @@ cur.execute(sql_command)
 
 #usando máscara para inserir dados, mais simples que escrever um loop com string chumbada
 #se precisar alterar o código mestre só mexer aqui
-sql_command="insert into minha_tabela values (?, ?, ?, ?, ?)"
+sql_command="insert into notas values (?, ?, ?, ?, ?)"
 novos_dados= [('63004030000882','62162','0','09072020','175340')]
 
 #insere registro a registro, neste ponto pode-se utilizar algorítimos de validação
@@ -36,3 +36,12 @@ for documento in novos_dados:
 
 #gravar execucoes
 conn.commit
+
+#leitura
+sql_command="select * from notas"
+curr.execute(sql_command);
+dados=curr.fetchall;
+
+for linha in dados
+  formatado = "%i CNPJ %s ..." % linha
+  print(formatado)
