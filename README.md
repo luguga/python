@@ -21,3 +21,7 @@ The simple examples is a first step, just a seed, to do large things is step by 
 
 ## dia de sorte
 Here in Brazil has a lotery modal game thats want some choose, a month and some sorted numbers, if you win remember me :)
+
+## Atualiza_csv
+This script is a good way to take several databases, merge these and update one unique and consolidated database. The script has a check modify file date and not update with old data, only fresh files could be uploaded.
+To use this script to Databricks Delta Lake Bronze file, you could append a new column with load datetime.
