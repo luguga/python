@@ -25,3 +25,10 @@ Here in Brazil has a lotery modal game thats want some choose, a month and some 
 ## Atualiza_csv
 This script is a good way to take several databases, merge these and update one unique and consolidated database. The script has a check modify file date and not update with old data, only fresh files could be uploaded.
 To use this script to Databricks Delta Lake Bronze file, you could append a new column with load datetime.
+
+## rifa.luzbem
+Here in Brazil we have an unformal lotery game that consists in a card with one woman name hidden by bend paper in secret. And this card has 5 columns and 10 rows in both sides of the card. Each cell have a woman name that we bet is wrote in secret area. The gamer can choose how many names that like. Before The cells have choosed at all, the owner of this card open the bend paper and revel the secret name. The gamer that choose de right name win!
+
+This program helps to choose a coordinate of 5 names to choose.
+
+You could order many products from instagram @LuzeBem.terapiaHolistica. Very Excelent TOP natural and helth products.
